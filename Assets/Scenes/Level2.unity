@@ -1290,7 +1290,7 @@ Transform:
   m_GameObject: {fileID: 557405546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.34, y: 2.08, z: -0.12873651}
+  m_LocalPosition: {x: -4.34, y: 2.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1815,7 +1815,7 @@ Transform:
   m_GameObject: {fileID: 1099199426}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.67, y: -2.51, z: -0.12873651}
+  m_LocalPosition: {x: 4.67, y: -2.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2133,6 +2133,12 @@ MonoBehaviour:
   currentHP: 0
   spriteRenderer: {fileID: 1208609379}
   sprites: []
+  lowHealthSound: {fileID: 0}
+  hpDecreaseBy5Sound: {fileID: 0}
+  hpDecreaseBy10Sound: {fileID: 0}
+  hpDecreaseBy20Sound: {fileID: 0}
+  hpDecreaseBy100Sound: {fileID: 0}
+  hpIncreaseBy5Sound: {fileID: 0}
 --- !u!114 &1208609384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,6 +2163,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 414340d62968b8e4bb6cdd7448e5a220, type: 3}
   - {fileID: 21300000, guid: 08e41febd7881ba48959446c38cc289e, type: 3}
   - {fileID: 21300000, guid: f99638b4896f4264ba0f993dbe70cca9, type: 3}
+  lowHealthSound: {fileID: 0}
+  hpDecreaseBy5Sound: {fileID: 0}
+  hpDecreaseBy10Sound: {fileID: 0}
+  hpDecreaseBy20Sound: {fileID: 0}
+  hpDecreaseBy100Sound: {fileID: 0}
+  hpIncreaseBy5Sound: {fileID: 0}
 --- !u!114 &1208609386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,6 +2184,7 @@ MonoBehaviour:
   countDownText: {fileID: 1774956410}
   remainingTime: 60
   levelSucceedPanel: {fileID: 2076819279}
+  countDownPanel: {fileID: 1774956408}
   wall: {fileID: 1208609378}
 --- !u!1 &1224130830
 GameObject:

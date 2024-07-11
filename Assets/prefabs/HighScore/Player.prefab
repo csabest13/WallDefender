@@ -102,7 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 2
-  jumpDistance: 2.63
+  jumpDistance: 2.7
+  jumpSound: {fileID: 8300000, guid: 6b0f99937917dda4b989c7bd837ad6d0, type: 3}
 --- !u!50 &6463693066681848962
 Rigidbody2D:
   serializedVersion: 4

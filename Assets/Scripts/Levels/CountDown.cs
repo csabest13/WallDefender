@@ -9,14 +9,14 @@ public class CountDown : MonoBehaviour
     //Szintek-nél visszaszámlálás - addig megy a szint, amig 0 lesz a remainingTime
 
     [SerializeField] TMP_Text countDownText; //visszaszámlálás
-    [SerializeField] float remainingTime; //hátralévõ idõ
+    public float remainingTime; //hátralévõ idõ
     public GameObject levelSucceedPanel; //pálya sikerült
+    public GameObject countDownPanel;
     public GameObject wall; //fal
     private healthObjectLevels healthObjectLevelScript;
 
     void Start()
     {
-
         levelSucceedPanel.SetActive(false);
 
         if (wall != null)
@@ -45,6 +45,7 @@ public class CountDown : MonoBehaviour
         if (remainingTime == 0)
         {
             levelSucceedPanel.SetActive(true);
+            countDownPanel.SetActive(false);
             UnlockNewLevel();
 
             DisableWallIsTrigger();

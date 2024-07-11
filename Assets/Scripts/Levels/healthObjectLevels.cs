@@ -15,13 +15,30 @@ public class healthObjectLevels : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] List<Sprite> sprites;
 
+    [SerializeField] AudioClip lowHealthSound;
+    private AudioSource audioSource;
+    private int previousHP;
+
+    [SerializeField] AudioClip hpDecreaseBy5Sound; //nyil hang
+    [SerializeField] AudioClip hpDecreaseBy10Sound; //kard hang
+    [SerializeField] AudioClip hpDecreaseBy20Sound; //bomba hang
+    [SerializeField] AudioClip hpDecreaseBy100Sound; //halálfej hang
+    [SerializeField] AudioClip hpIncreaseBy5Sound; //heal hang
+
+    private bool hasPlayedHpIncreaseBy5Sound = false;
+
     void Start()
     {
         levelFailedPanel.SetActive(false);
-
         currentHP = startHP;
 
         UpdateHealthText();
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
     void Update()
     {
@@ -30,8 +47,46 @@ public class healthObjectLevels : MonoBehaviour
 
         if (currentHP <= 0)
             levelFailedPanel.SetActive(true);
+     
         if (currentHP <= 0)
             Destroy(gameObject);
+
+        if (previousHP != currentHP)
+        {
+            int hpDifference = previousHP - currentHP;
+            if (currentHP <= 25 && previousHP > 25)
+            {
+                PlaySound(lowHealthSound);
+            }
+
+            // Hang lejátszása a HP csökkenéséhez
+            if (hpDifference >= 5)
+            {
+                PlaySound(hpDecreaseBy5Sound);
+            }
+            if (hpDifference >= 10)
+            {
+                PlaySound(hpDecreaseBy10Sound);
+            }
+            if (hpDifference >= 20)
+            {
+                PlaySound(hpDecreaseBy20Sound);
+            }
+            if (hpDifference >= 100)
+            {
+                PlaySound(hpDecreaseBy100Sound);
+            }
+            if (hpDifference <= -5 && hasPlayedHpIncreaseBy5Sound)
+            {
+                PlaySound(hpIncreaseBy5Sound);
+            }
+            else
+            {
+                hasPlayedHpIncreaseBy5Sound = true;
+            }
+
+            previousHP = currentHP;
+        }
 
     }
     private void UpdateHealthText()
@@ -58,6 +113,13 @@ public class healthObjectLevels : MonoBehaviour
             spriteRenderer.sprite = sprites[4];
         else if (currentHP <= 20)
             spriteRenderer.sprite = sprites[5];
+    }
+    void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }
 

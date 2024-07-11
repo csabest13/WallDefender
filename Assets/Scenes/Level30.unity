@@ -1114,8 +1114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 220}
-  m_SizeDelta: {x: 1000, y: 100}
+  m_AnchoredPosition: {x: 0, y: -260}
+  m_SizeDelta: {x: 1600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &555382119
 MonoBehaviour:
@@ -1137,10 +1137,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level Completed!
+  m_text: 'New levels coming soon...
+
+    This was the easy mode'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c136401041b57854db7e5ee7f2635bda, type: 2}
-  m_sharedMaterial: {fileID: -5744133185206520957, guid: c136401041b57854db7e5ee7f2635bda, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc5279b4a546177479c3ce19e5fdb1d3, type: 2}
+  m_sharedMaterial: {fileID: -5744133185206520957, guid: fc5279b4a546177479c3ce19e5fdb1d3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1164,8 +1166,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 130
+  m_fontSizeBase: 130
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1180,7 +1182,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -1260,7 +1262,7 @@ Transform:
   m_GameObject: {fileID: 557405546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.34, y: 2.08, z: -0.12873651}
+  m_LocalPosition: {x: -4.34, y: 2.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1576,7 +1578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &744529256
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1887,7 +1889,7 @@ Transform:
   m_GameObject: {fileID: 1099199426}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.67, y: -2.51, z: -0.12873651}
+  m_LocalPosition: {x: 4.67, y: -2.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1971,15 +1973,15 @@ RectTransform:
   m_GameObject: {fileID: 1127429966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2076819280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -420, y: -160}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1820, y: -100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1127429968
 MonoBehaviour:
@@ -2050,7 +2052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.98039216}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2255,6 +2257,12 @@ MonoBehaviour:
   currentHP: 0
   spriteRenderer: {fileID: 1208609379}
   sprites: []
+  lowHealthSound: {fileID: 0}
+  hpDecreaseBy5Sound: {fileID: 0}
+  hpDecreaseBy10Sound: {fileID: 0}
+  hpDecreaseBy20Sound: {fileID: 0}
+  hpDecreaseBy100Sound: {fileID: 0}
+  hpIncreaseBy5Sound: {fileID: 0}
 --- !u!114 &1208609384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2267,7 +2275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f202a48fcc8e38a4199085ccd3c49e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHP: 100
+  startHP: 100000000
   healthText: {fileID: 197907930}
   levelFailedPanel: {fileID: 2074941254}
   currentHP: 0
@@ -2379,7 +2387,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 531811507}
         m_TargetAssemblyTypeName: LoadLevels, Assembly-CSharp
-        m_MethodName: LoadLevel25
+        m_MethodName: LoadLevel30
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3938,15 +3946,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.49411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 89d56496883a02d4db5308c2cc3ee7b9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
