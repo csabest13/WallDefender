@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +7,7 @@ using UnityEngine.UI;
 public class LoadLevels : MonoBehaviour
 {
     //Levels gombok + Level Scene betöltések 
+
 
     public Button[] buttons;
     public Sprite spriteRenderer1; // interactable = false

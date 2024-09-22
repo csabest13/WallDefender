@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpeed: 50
-  maxSpeed: 80
+  maxSpeed: 65
   damage: 100
   minDirection: {x: -5, y: -1}
   maxDirection: {x: -5, y: 0}
